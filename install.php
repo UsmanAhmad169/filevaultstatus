@@ -14,11 +14,11 @@ function extension_install_filevaultstatus()
     $commonObject = new ExtensionCommon;
 
     $commonObject -> sqlQuery(
-        "CREATE TABLE filevaultstatus (
-        ID INTEGER NOT NULL AUTO_INCREMENT, 
-        HARDWARE_ID INTEGER NOT NULL,
-        ENCRYPTIONSTATUS VARCHAR(255) NOT NULL,
-        PRIMARY KEY (ID,HARDWARE_ID)) ENGINE=INNODB;"
+        "CREATE TABLE IF NOT EXISTS `filevaultstatus` (
+        `ID` INTEGER NOT NULL AUTO_INCREMENT, 
+        `HARDWARE_ID` INTEGER NOT NULL,
+        `ENCRYPTIONSTATUS` VARCHAR(255) NOT NULL,
+        PRIMARY KEY (`ID` ,`HARDWARE_ID`)) ENGINE=INNODB;"
     );
 }
 
