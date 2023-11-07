@@ -1,13 +1,12 @@
 {
-"displayName" : "Plugin Example",
-"author" : ["Léa DROGUET"],
+"displayName" : "FileVault Status",
+"author" : ["Usman Ahmad"],
 "contributor" : [],
 "supportedAgent" : ["Unix"],
-"version" : "2",
+"version" : "1",
 "licence" : "GPLv2",
 "description" : 
     {
-        "fr" : "Un exemple de plugin",
-        "en" : "A plugin example 2"
+        "en" : "Get the FileVault status for MacOS device"
     }
 }

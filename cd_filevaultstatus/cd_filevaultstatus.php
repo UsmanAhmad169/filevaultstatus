@@ -1,12 +1,12 @@
 <?php
 ###############################################################################
-## OCSINVENTORY-NG
-## Copyleft Léa DROGUET 2020
-## Web : http://www.ocsinventory-ng.org
+## EZO
+## Copyleft Usman Ahmad (EZO) 2023
+## Web : http://www.ezo.io
 ##
 ## This code is open source and may be copied and modified as long as the source
 ## code is always made freely available.
-## Please refer to the General Public Licence http://www.gnu.org/ or Licence.txt
+## Please refer to the General Public Licence http://www.gnu.org/ or Licence.txt**
 ################################################################################
 
 
@@ -26,14 +26,14 @@ if (AJAX) {
 
 
 // print a title for the table
-print_item_header("A plugin example");
+print_item_header("FileVault Status");
 
 if (!isset($protectedPost['SHOW'])) {
     $protectedPost['SHOW'] = 'NOSHOW';
 }
 
 // form details and tab options
-$form_name = "example";
+$form_name = "filevaultstatus";
 $table_name = $form_name;
 $tab_options = $protectedPost;
 $tab_options['form_name'] = $form_name;
@@ -41,16 +41,14 @@ $tab_options['table_name'] = $table_name;
 
 
 echo open_form($form_name);
-$list_fields = array(
-                    'column 1' => 'COLUMN_1',
-                    'column 2' => 'COLUMN_2');
+$list_fields = array('Encryption status' => 'ENCRYPTIONSTATUS');
 // columns to include at any time and default columns
 $list_col_cant_del = $list_fields;
 $default_fields = $list_fields;
 
 // select columns for table display
 $sql = prepare_sql_tab($list_fields);
-$sql['SQL']  .= "FROM example WHERE (hardware_id = $systemid)";
+$sql['SQL']  .= "FROM filevaultstatus WHERE (hardware_id = $systemid)";
 
 array_push($sql['ARG'], $systemid);
 $tab_options['ARG_SQL'] = $sql['ARG'];
